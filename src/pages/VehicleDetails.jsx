@@ -94,7 +94,7 @@ export default function VehicleDetails() {
     .slice(0, 3);
 
   return (
-    <div>
+    <div className="w-full max-w-full overflow-x-clip">
       <SEOHead 
         title={`${vehicle.name} Price, Specs & Colours | Shankar Automobiles Sitapur`}
         description={`Explore official specifications, mileage, colors and features of ${vehicle.name} at Shankar Automobiles, authorized TVS dealer in Sitapur, Surguja. Inquire for on-road price & test ride.`}
@@ -116,13 +116,13 @@ export default function VehicleDetails() {
       </div>
 
       {/* Main Vehicle Showcase */}
-      <section className="py-12 sm:py-16 bg-[#0B0E15]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+      <section className="py-10 sm:py-16 bg-[#0B0E15] w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full min-w-0">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start w-full min-w-0">
             
             {/* Left Column: Image & Visual Gallery (7 Cols) */}
-            <div className="lg:col-span-7 space-y-4">
+            <div className="lg:col-span-7 space-y-4 min-w-0 w-full">
               
               {/* Main Stage Image */}
               <div className="relative aspect-[16/10] w-full rounded-3xl overflow-hidden bg-[radial-gradient(ellipse_at_center,_#1E293B_0%,_#111726_65%,_#0A0D14_100%)] border border-white/10 shadow-2xl">
@@ -246,7 +246,7 @@ export default function VehicleDetails() {
             </div>
 
             {/* Right Column: Details & Primary Actions (5 Cols) */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-5 space-y-6 min-w-0 w-full">
               
               <div>
                 <div className="inline-flex items-center space-x-1.5 text-xs font-bold uppercase tracking-wider text-red-500 mb-2">
@@ -509,20 +509,20 @@ export default function VehicleDetails() {
               Schedule a test ride or get a breakdown of registration and insurance costs in Sitapur.
             </p>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 w-full sm:w-auto">
             <button
               type="button"
               onClick={() => openTestRide(vehicle.name)}
-              className="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold text-xs rounded-xl transition"
+              className="flex-1 sm:flex-initial px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold text-xs rounded-xl transition whitespace-nowrap"
             >
               Book Test Ride
             </button>
             <button
               type="button"
               onClick={handleWhatsAppEnquiry}
-              className="inline-flex items-center space-x-1.5 px-5 py-2.5 bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-xs rounded-xl shadow-md shadow-[#25D366]/20 transition-all duration-200"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center space-x-1.5 px-5 py-2.5 bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-xs rounded-xl shadow-md shadow-[#25D366]/20 transition-all duration-200 whitespace-nowrap"
             >
-              <WhatsAppIcon className="w-4 h-4 text-white" />
+              <WhatsAppIcon className="w-4 h-4 text-white shrink-0" />
               <span>Chat on WhatsApp</span>
             </button>
           </div>

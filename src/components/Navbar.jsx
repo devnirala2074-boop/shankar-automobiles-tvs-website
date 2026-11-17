@@ -69,18 +69,18 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full">
+    <header className="sticky top-0 z-40 w-full max-w-full">
       {/* Slim Top Utility Bar */}
-      <div className="bg-[#080A0F] text-[11px] text-gray-400 border-b border-white/5 py-1 px-4 sm:px-6 lg:px-8">
+      <div className="w-full bg-[#080A0F] text-[11px] text-gray-400 border-b border-white/5 py-1.5 px-3 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
-          {/* Location Info */}
-          <div className="flex items-center gap-1.5 truncate">
+          {/* Location Info — min-w-0 flex-1 ensures clean truncation on narrow mobile screens */}
+          <div className="flex items-center gap-1.5 min-w-0 flex-1">
             <MapPin className="w-3 h-3 text-red-500 shrink-0" />
             <span className="truncate">NH-43, Opp. Central Bank, Sitapur, Surguja (C.G.)</span>
           </div>
 
           {/* Timings & Direct WhatsApp */}
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
             <div className="hidden md:flex items-center gap-1.5 text-gray-400">
               <Clock className="w-3 h-3 text-red-500/80 shrink-0" />
               <span>Open 7 Days: 9:30 AM – 7:30 PM</span>
@@ -103,26 +103,26 @@ export default function Navbar() {
         className={`w-full transition-all duration-300 border-b ${
           scrolled
             ? 'bg-[#0B0E14]/95 backdrop-blur-md border-white/10 shadow-xl h-16'
-            : 'bg-[#0B0E14] border-white/5 h-[68px]'
+            : 'bg-[#0B0E14] border-white/5 h-16 sm:h-[68px]'
         }`}
       >
-        <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto h-full px-2.5 min-[360px]:px-3.5 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Left: Single Dealership Logo & Primary Brand Identity */}
-          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center shadow-md shadow-red-950/50 border border-red-500/30 group-hover:scale-105 transition-transform duration-200 shrink-0">
-              <TVSHorseIcon className="w-6 h-4" color="#FFFFFF" />
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group min-w-0 shrink-0">
+            <div className="w-8 h-8 min-[360px]:w-9 min-[360px]:h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center shadow-md shadow-red-950/50 border border-red-500/30 group-hover:scale-105 transition-transform duration-200 shrink-0">
+              <TVSHorseIcon className="w-5 h-3.5 sm:w-6 sm:h-4" color="#FFFFFF" />
             </div>
-            <div className="flex flex-col justify-center">
-              <div className="flex items-center gap-1.5 whitespace-nowrap leading-none">
-                <span className="text-[15px] sm:text-lg xl:text-xl font-black tracking-tight text-white uppercase group-hover:text-red-400 transition-colors">
+            <div className="flex flex-col justify-center min-w-0">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-1.5 leading-[1.05] sm:leading-none">
+                <span className="text-[13px] min-[360px]:text-[14px] sm:text-lg xl:text-xl font-black tracking-tight text-white uppercase group-hover:text-red-400 transition-colors whitespace-nowrap">
                   SHANKAR
                 </span>
-                <span className="text-[15px] sm:text-lg xl:text-xl font-black tracking-tight text-red-500 uppercase">
+                <span className="text-[13px] min-[360px]:text-[14px] sm:text-lg xl:text-xl font-black tracking-tight text-red-500 uppercase whitespace-nowrap">
                   AUTOMOBILES
                 </span>
               </div>
-              <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-gray-400 whitespace-nowrap leading-none mt-1">
+              <span className="hidden min-[380px]:block text-[8.5px] sm:text-[10px] tracking-wider sm:tracking-widest uppercase font-semibold text-gray-400 whitespace-nowrap leading-none mt-0.5 sm:mt-1">
                 Authorized TVS Dealer • Sitapur
               </span>
             </div>
@@ -168,11 +168,11 @@ export default function Navbar() {
           </div>
 
           {/* Right: Tablet & Mobile Controls */}
-          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
+          <div className="flex lg:hidden items-center gap-1 min-[360px]:gap-1.5 sm:gap-2 shrink-0">
             <button
               type="button"
               onClick={handleQuickWhatsApp}
-              className="p-2 rounded-lg bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 text-[#25D366] transition"
+              className="w-8 h-8 min-[360px]:w-9 min-[360px]:h-9 flex items-center justify-center rounded-lg bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 text-[#25D366] transition shrink-0"
               aria-label="Chat on WhatsApp"
               title="Chat on WhatsApp"
             >
@@ -181,17 +181,17 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => openEnquiry()}
-              className="px-2.5 sm:px-4 py-2 text-[11px] sm:text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-lg shadow-md shadow-red-900/30 whitespace-nowrap transition"
+              className="h-8 min-[360px]:h-9 px-2.5 min-[360px]:px-3 sm:px-4 inline-flex items-center justify-center text-[11px] min-[360px]:text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-lg shadow-md shadow-red-900/30 whitespace-nowrap transition shrink-0"
             >
               Enquire Now
             </button>
             <button
               type="button"
               onClick={toggleMobileMenu}
-              className="p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-xl transition"
+              className="w-8 h-8 min-[360px]:w-9 min-[360px]:h-9 flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 rounded-xl transition shrink-0"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 min-[360px]:w-6 min-[360px]:h-6" /> : <Menu className="w-5 h-5 min-[360px]:w-6 min-[360px]:h-6" />}
             </button>
           </div>
 
@@ -200,7 +200,7 @@ export default function Navbar() {
 
       {/* Tablet & Mobile Hamburger Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full inset-x-0 max-h-[calc(100dvh-96px)] bg-[#0A0D14]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl z-50 flex flex-col justify-between p-5 sm:p-6 overflow-y-auto animate-fade-in">
+        <div className="lg:hidden absolute top-full inset-x-0 max-h-[calc(100dvh-96px)] bg-[#0A0D14]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl z-50 flex flex-col justify-between p-4 sm:p-6 overflow-y-auto animate-fade-in">
           <div className="space-y-1.5">
             <div className="text-[11px] font-bold uppercase tracking-widest text-red-500 px-3 pb-1.5">
               Navigation
@@ -255,10 +255,10 @@ export default function Navbar() {
                 closeMobileMenu();
                 handleQuickWhatsApp();
               }}
-              className="w-full py-3 px-4 flex items-center justify-center gap-2 text-sm font-bold text-white bg-[#25D366] hover:bg-[#20BA5A] rounded-xl shadow-lg shadow-[#25D366]/20 transition-all duration-200 whitespace-nowrap"
+              className="w-full py-3 px-4 flex items-center justify-center gap-2 text-sm font-bold text-white bg-[#25D366] hover:bg-[#20BA5A] rounded-xl shadow-lg shadow-[#25D366]/20 transition-all duration-200"
             >
               <WhatsAppIcon className="w-4 h-4 text-white shrink-0" />
-              <span>Chat on WhatsApp ({DEALERSHIP.contact.phoneDisplay})</span>
+              <span className="truncate">Chat on WhatsApp ({DEALERSHIP.contact.phoneDisplay})</span>
             </button>
 
             <div className="text-center text-xs text-gray-400 pt-3 border-t border-white/5">

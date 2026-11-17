@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="w-full max-w-full overflow-x-clip">
       <SEOHead 
         title="Shankar Automobiles | Authorized TVS Two-Wheeler Dealer – Sitapur, Surguja"
         description="Official TVS Motor dealership in Sitapur, Surguja, CG. Explore TVS Apache, Raider 125, Jupiter, Ronin, and iQube EV. Book a test ride and enquire on-road prices on WhatsApp."
@@ -141,30 +141,31 @@ export default function Home() {
       </section>
 
       {/* 3. Featured Vehicles Section */}
-      <section className="py-20 bg-[#090C12] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+      <section className="py-14 sm:py-20 bg-[#090C12] relative w-full max-w-full overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full min-w-0">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-600/15 border border-red-500/30 text-red-400 text-xs font-bold tracking-wide uppercase mb-3">
-                <Sparkles className="w-3.5 h-3.5 text-red-500" />
-                <span>Popular At Shankar Automobiles</span>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12 min-w-0">
+            <div className="min-w-0">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-600/15 border border-red-500/30 text-red-400 text-xs font-bold tracking-wide uppercase mb-3 max-w-full">
+                <Sparkles className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                <span className="truncate">Popular At Shankar Automobiles</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
                 Featured TVS Vehicles
               </h2>
-              <p className="text-sm text-gray-400 mt-2 max-w-xl">
+              <p className="text-xs sm:text-sm text-gray-400 mt-2 max-w-xl">
                 Explore the most sought-after TVS motorcycles and scooters available through our Sitapur showroom.
               </p>
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-xl bg-[#121722] border border-white/10">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 p-1.5 rounded-xl bg-[#121722] border border-white/10 max-w-full">
               {VEHICLE_CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
+                  type="button"
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
+                  className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold transition whitespace-nowrap ${
                     activeCategory === cat.id
                       ? 'bg-red-600 text-white shadow-md'
                       : 'text-gray-400 hover:text-white'
@@ -177,20 +178,20 @@ export default function Home() {
           </div>
 
           {/* Vehicle Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full min-w-0">
             {featuredVehicles.map((vehicle) => (
               <VehicleCard key={vehicle.id} vehicle={vehicle} />
             ))}
           </div>
 
           {/* Action to see entire catalogue */}
-          <div className="mt-12 text-center">
+          <div className="mt-10 sm:mt-12 text-center">
             <Link
               to="/vehicles"
-              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm border border-white/15 transition hover:border-red-500/50"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm border border-white/15 transition hover:border-red-500/50"
             >
               <span>Explore Complete TVS Catalogue ({VEHICLES.length} Models)</span>
-              <ArrowRight className="w-4 h-4 text-red-500" />
+              <ArrowRight className="w-4 h-4 text-red-500 shrink-0" />
             </Link>
           </div>
 
@@ -239,10 +240,10 @@ export default function Home() {
       </section>
 
       {/* 5. Promotional Offers & Finance Guidance */}
-      <section className="py-20 bg-[#090C12] relative">
+      <section className="py-14 sm:py-20 bg-[#090C12] relative w-full max-w-full overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           
-          <div className="rounded-3xl bg-gradient-to-r from-[#171F2D] via-[#1E2638] to-[#161C28] border border-white/10 p-8 sm:p-12">
+          <div className="rounded-3xl bg-gradient-to-r from-[#171F2D] via-[#1E2638] to-[#161C28] border border-white/10 p-5 sm:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               <div className="lg:col-span-7 space-y-4">

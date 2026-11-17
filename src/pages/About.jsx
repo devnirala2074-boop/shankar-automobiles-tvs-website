@@ -97,7 +97,7 @@ export default function About() {
               </div>
 
               {/* Floating Badge Card */}
-              <div className="absolute -bottom-6 -left-6 sm:bottom-6 sm:left-6 p-5 rounded-2xl bg-[#171E2D]/95 backdrop-blur-md border border-white/10 shadow-2xl max-w-xs">
+              <div className="mt-3 sm:mt-0 sm:absolute sm:bottom-6 sm:left-6 p-4 sm:p-5 rounded-2xl bg-[#171E2D]/95 backdrop-blur-md border border-white/10 shadow-2xl sm:max-w-xs">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white shrink-0">
                     <TVSHorseIcon className="w-6 h-4 text-white" color="#FFFFFF" />
